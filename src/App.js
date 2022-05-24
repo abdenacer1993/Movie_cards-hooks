@@ -1,23 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import MovieList from './components/MovieList';
+import Searsh from './components/Searsh';
+import { data } from './data'
+import { useState } from 'react';
+
 
 function App() {
+  const [Moviec, setMoviec] = useState([])
+  const [Moviesearchval, setMoviesearchval] = useState("")
+  const [Moviesearchrate, setMoviesearchrate] = useState(0)
+  const clickShearchVal = (value) => {setMoviesearchval(value)}
+  const clickSearchByRate = (rate) => {setMoviesearchrate(rate)}
+  
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container-fluid movie-app">
+      <div className='row'>
+      <Searsh clickShearchVal={clickShearchVal} Moviesearchrate={Moviesearchrate} clickSearchByRate={clickSearchByRate}/>
+      <MovieList data={data.filter(
+          (el)=>el.Title.toLowerCase().includes(Moviesearchval.trim().toLowerCase())
+          &&el.Rate>=Moviesearchrate
+        )} />
+      
+      </div>
     </div>
   );
 }
