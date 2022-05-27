@@ -1,6 +1,4 @@
-
 import './App.css' ;
-
 import MovieList from './components/MovieList';
 import Searsh from './components/Searsh';
 import { data } from './data'

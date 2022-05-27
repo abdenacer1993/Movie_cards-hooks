@@ -1,8 +1,7 @@
 import {React,useState} from 'react'
-
 import { Button, Form, Modal } from 'react-bootstrap';
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Rating } from 'react-simple-star-rating';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Add = ({AddMovie}) => {
   const [name,setName]=useState("");
