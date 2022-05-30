@@ -151,6 +151,12 @@ body {
 	text-transform: uppercase;
 	margin-bottom: 5px;
 }
+.no_movies{
+	text-transform: uppercase;
+	color: #fff;
+	margin-left: 530px;
+	
+}
 
 .ticket__movie-slogan {
 	color: #999;

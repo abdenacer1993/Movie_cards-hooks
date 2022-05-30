@@ -1,10 +1,10 @@
 import React from 'react'
 import MovieCard from './MovieCard'
 
-function MovieList({data}) {
+function MovieList({data,del}) {
   return (
     <div >
-        {data.map((el)=><MovieCard key={el.id} el={el} />)}
+        {data.map((el)=><MovieCard key={el.id} el={el} del={del}/>)}
   
   
   

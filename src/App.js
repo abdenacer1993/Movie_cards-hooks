@@ -16,18 +16,23 @@ function App() {
   
   const AddMovie = (movie) => { setMoviec([...Moviec,movie]) }
 
+  const del = (idd) => {
+    setMoviec(Moviec.filter((el) => el.Id !== idd))
+  }
+ 
+
   return (
     <div>
     <div className="container-fluid movie-app">
       <div className='row'>
       <Searsh clickShearchVal={clickShearchVal} Moviesearchrate={Moviesearchrate} clickSearchByRate={clickSearchByRate}/>
-      <MovieList data={Moviec.filter(
+      {Moviec.length ? <MovieList data={Moviec.filter(
           (el)=>el.Title.toLowerCase().includes(Moviesearchval.trim().toLowerCase())
           &&el.Rate>=Moviesearchrate
-        )} />
+        )} del={del}/>: <h1 className="no_movies" >no movies</h1>}
       
       </div>
-      </div>
+    </div>
       <Add AddMovie={AddMovie}/>
 
     </div>

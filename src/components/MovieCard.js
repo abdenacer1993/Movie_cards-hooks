@@ -1,7 +1,10 @@
 import React from 'react'
 import { Rating } from 'react-simple-star-rating'
 
-function MovieCard({el}) {
+function MovieCard({el,del}) {
+
+  
+
   return (
       <div className="hero-container">
     <div className="main-container">
@@ -19,7 +22,7 @@ function MovieCard({el}) {
           <p className="ticket__current-price">{el.Released}</p>
           
           <Rating  ratingValue={el.Rate} readonly='true'/>
-          <button className="ticket__buy-btn">Edit</button>
+          <button className="ticket__buy-btn" onClick={()=>del(el.Id)}>Delete</button>
       </div>
     </div>
 </div>
